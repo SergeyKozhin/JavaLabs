@@ -1,14 +1,13 @@
 package Lab5;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Properties;
 
 public class Main {
+    private static String TEST_FILE = "test.properties";
+
     public static void main(String[] args) {
-        try (OutputStream output = new FileOutputStream("test.properties")) {
+        try (OutputStream output = new FileOutputStream(TEST_FILE)) {
             Properties properties = new Properties();
             properties.setProperty("first_name", "Sergey");
             properties.setProperty("last_name", "Kozhin");
@@ -22,9 +21,10 @@ public class Main {
         }
 
 
-        try {
-            PropertiesReader reader = new PropertiesReader("test.properties");
-            reader.list(System.out);
+        try (InputStream input = new FileInputStream(TEST_FILE)){
+            Properties properties = new Properties();
+            properties.load(input);
+            properties.list(System.out);
         } catch (FileNotFoundException e) {
             System.err.println("No such file: " + e.getMessage());
         } catch (IllegalArgumentException e) {

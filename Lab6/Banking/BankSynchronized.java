@@ -12,6 +12,12 @@ public class BankSynchronized extends Bank {
         Account fromAccount = accounts.get(fromId);
         Account toAccount = accounts.get(toId);
 
+        if (fromAccount.getAmount() < amount) {
+            System.err.println("Transaction denied! Account " + fromId + " has " + fromAccount.getAmount() +
+                    ", but " + amount + " required!");
+            return;
+        }
+
         Account firstLock, secondLock;
         if (fromId.compareTo(toId) < 0) {
             firstLock = fromAccount;

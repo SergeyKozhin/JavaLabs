@@ -15,7 +15,5 @@ public abstract class Account {
 
     public abstract void withdraw(long amount);
 
-    public long getAmount() {
-        return amount;
-    }
+    public abstract long getAmount();
 }

@@ -32,6 +32,15 @@ public class AccountConcurrent extends Account {
         }
     }
 
+    public long getAmount() {
+        lock.lock();
+        try {
+            return amount;
+        } finally {
+            lock.unlock();
+        }
+    }
+
     public Lock getLock() {
         return lock;
     }

@@ -14,6 +14,12 @@ public class BankConcurrent extends Bank {
         AccountConcurrent fromAccount = (AccountConcurrent) accounts.get(fromId);
         AccountConcurrent toAccount = (AccountConcurrent) accounts.get(toId);
 
+        if (fromAccount.getAmount() < amount) {
+            System.err.println("Transaction denied! Account " + fromId + " has " + fromAccount.getAmount() +
+                    ", but " + amount + " required!");
+            return;
+        }
+
         acquireLocks(fromAccount.getLock(), toAccount.getLock());
         try {
             fromAccount.withdraw(amount);

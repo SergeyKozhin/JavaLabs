@@ -17,4 +17,8 @@ public class AccountSynchronized extends Account {
     public synchronized void withdraw(long amount) {
         this.amount -= amount;
     }
+
+    public synchronized long getAmount() {
+        return amount;
+    }
 }

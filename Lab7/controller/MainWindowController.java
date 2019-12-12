@@ -2,13 +2,9 @@ package Lab7.controller;
 
 import Lab7.MainApp;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 
 public class MainWindowController {
     private MainApp mainApp;
-
-    public MainWindowController() {
-    }
 
     @FXML
     private void initialize() {

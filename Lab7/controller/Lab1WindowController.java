@@ -1,7 +1,6 @@
 package Lab7.controller;
 
 import Lab7.MainApp;
-import Lab7.controller.BookEditDialogController;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;

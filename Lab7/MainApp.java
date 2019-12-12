@@ -3,7 +3,7 @@ package Lab7;
 import Lab7.controller.MainWindowController;
 import Lab7.controller.Lab1WindowController;
 import Lab7.controller.Lab2WindowController;
-import Lab7.view.Lab3WindowController;
+import Lab7.controller.Lab3WindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

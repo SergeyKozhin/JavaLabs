@@ -2,6 +2,6 @@ package Lab4;
 
 public class Main {
     public static void main(String[] args) {
-        new FileExplorer().start();
+        new FileExplorer(System.in, System.out).start();
     }
 }

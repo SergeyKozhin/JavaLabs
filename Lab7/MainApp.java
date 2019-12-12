@@ -6,6 +6,7 @@ import Lab7.controller.Lab2WindowController;
 import Lab7.controller.Lab3WindowController;
 import Lab7.controller.Lab4WindowController;
 import Lab7.controller.Lab5WindowController;
+import Lab7.controller.Lab6WindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -100,6 +101,19 @@ public class MainApp extends Application {
             primaryStage.setTitle("Lab 5");
 
             Lab5WindowController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void openLab6() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("view/Lab6Window.fxml"));
+            primaryStage.setScene(new Scene(loader.load()));
+            primaryStage.setTitle("Lab 6");
+
+            Lab6WindowController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,7 @@
 package Lab6.Banking;
 
+import java.io.PrintStream;
+
 public class BankSynchronized extends Bank {
 
     public BankSynchronized(int size) {
@@ -8,12 +10,12 @@ public class BankSynchronized extends Bank {
         }
     }
 
-    public void transfer(String fromId, String toId, long amount) {
+    public void transfer(String fromId, String toId, long amount, PrintStream out) {
         Account fromAccount = accounts.get(fromId);
         Account toAccount = accounts.get(toId);
 
         if (fromAccount.getAmount() < amount) {
-            System.err.println("Transaction denied! Account " + fromId + " has " + fromAccount.getAmount() +
+            out.println("Transaction denied! Account " + fromId + " has " + fromAccount.getAmount() +
                     ", but " + amount + " required!");
             return;
         }

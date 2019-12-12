@@ -37,9 +37,14 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </GridPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="14.0" styleClass="title-label" stylesheets="@materialfx.css" text="Lab 7" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="14.0" prefHeight="82.0" prefWidth="590.0" styleClass="title-label" stylesheets="@materialfx.css" text="Lab 7" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <font>
-            <Font name="Comic Sans MS Bold Italic" size="62.0" />
+            <Font name="Copperplate Gothic Bold" size="62.0" />
+         </font>
+      </Label>
+      <Label layoutX="567.0" layoutY="93.0" text="by Sergey Kozhin" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+         <font>
+            <Font name="System Italic" size="19.0" />
          </font>
       </Label>
    </children>

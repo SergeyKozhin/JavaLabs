@@ -5,9 +5,11 @@ import Lab7.controller.Lab1WindowController;
 import Lab7.controller.Lab2WindowController;
 import Lab7.controller.Lab3WindowController;
 import Lab7.controller.Lab4WindowController;
+import Lab7.controller.Lab5WindowController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -89,6 +91,29 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void openLab5() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("view/Lab5Window.fxml"));
+            primaryStage.setScene(new Scene(loader.load()));
+            primaryStage.setTitle("Lab 5");
+
+            Lab5WindowController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showErrorWindow(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.initOwner(primaryStage);
+        alert.setTitle("Invalid fields");
+        alert.setHeaderText("Please correct invalid fields");
+        alert.setContentText(message);
+
+        alert.showAndWait();
     }
 
     public Stage getPrimaryStage() {

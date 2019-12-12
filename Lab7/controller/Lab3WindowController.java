@@ -51,9 +51,9 @@ public class Lab3WindowController {
                     Integer.parseInt(deleteToField.getText()));
             update();
         } catch (NumberFormatException e) {
-            showErrorWindow("Indexes are not integers!");
+            mainApp.showErrorWindow("Indexes are not integers!");
         } catch (StringIndexOutOfBoundsException e) {
-            showErrorWindow("Indexes out of bounds!");
+            mainApp.showErrorWindow("Indexes out of bounds!");
         }
     }
 
@@ -63,9 +63,9 @@ public class Lab3WindowController {
             undoStringBuilder.insert(Integer.parseInt(insertWhereField.getText()), insertWhatField.getText());
             update();
         } catch (NumberFormatException e) {
-            showErrorWindow("Indexes are not integers!");
+            mainApp.showErrorWindow("Indexes are not integers!");
         } catch (StringIndexOutOfBoundsException e) {
-            showErrorWindow("Indexes out of bounds!");
+            mainApp.showErrorWindow("Indexes out of bounds!");
         }
     }
 
@@ -76,9 +76,9 @@ public class Lab3WindowController {
                     Integer.parseInt(replaceToField.getText()), replaceWithField.getText());
             update();
         } catch (NumberFormatException e) {
-            showErrorWindow("Indexes are not integers!");
+            mainApp.showErrorWindow("Indexes are not integers!");
         } catch (StringIndexOutOfBoundsException e) {
-            showErrorWindow("Indexes out of bounds!");
+            mainApp.showErrorWindow("Indexes out of bounds!");
         }
     }
 
@@ -101,15 +101,6 @@ public class Lab3WindowController {
 
     private void update() {
         stringLabel.setText(undoStringBuilder.toString());
-    }
-    private void showErrorWindow(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.initOwner(mainApp.getPrimaryStage());
-        alert.setTitle("Invalid fields");
-        alert.setHeaderText("Please correct invalid fields");
-        alert.setContentText(message);
-
-        alert.showAndWait();
     }
 
     public void setMainApp(MainApp mainApp) {

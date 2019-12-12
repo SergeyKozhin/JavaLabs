@@ -30,6 +30,11 @@ public class MainWindowController {
         mainApp.openLab4();
     }
 
+    @FXML
+    private void handleLab5() {
+        mainApp.openLab5();
+    }
+
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }

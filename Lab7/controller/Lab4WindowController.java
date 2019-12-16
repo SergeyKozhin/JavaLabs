@@ -3,6 +3,8 @@ package Lab7.controller;
 import Lab4.FileExplorer;
 import Lab7.MainApp;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -30,6 +32,8 @@ public class Lab4WindowController {
                 });
             }
         }, true);
+
+        console.textProperty().addListener((observableValue, s, t1) -> console.setScrollTop(0));
 
         fileExplorer = new FileExplorer(System.in, out);
         fileExplorer.execute("\n");

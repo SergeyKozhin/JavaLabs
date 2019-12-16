@@ -37,6 +37,8 @@ public class Lab6WindowController {
             }
         });
 
+        console.textProperty().addListener((observableValue, s, t1) -> console.setScrollTop(0));
+
         synchronizedButton.setDisable(true);
         concurrentButton.setDisable(true);
     }

@@ -1,5 +1,6 @@
 package Lab6.Banking;
 
+import java.io.PrintStream;
 import java.util.concurrent.locks.Lock;
 
 public class BankConcurrent extends Bank {
@@ -10,12 +11,12 @@ public class BankConcurrent extends Bank {
         }
     }
 
-    public void transfer(String fromId, String toId, long amount) {
+    public void transfer(String fromId, String toId, long amount, PrintStream out) {
         AccountConcurrent fromAccount = (AccountConcurrent) accounts.get(fromId);
         AccountConcurrent toAccount = (AccountConcurrent) accounts.get(toId);
 
         if (fromAccount.getAmount() < amount) {
-            System.err.println("Transaction denied! Account " + fromId + " has " + fromAccount.getAmount() +
+            out.println("Transaction denied! Account " + fromId + " has " + fromAccount.getAmount() +
                     ", but " + amount + " required!");
             return;
         }

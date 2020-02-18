@@ -1,12 +1,12 @@
 package Lab1.TaskC;
 
-class Book {
+public class Book {
     private int id;
     private String author;
     private String name;
     private int year;
 
-    Book(int id, String author, String name, int year) {
+    public Book(int id, String author, String name, int year) {
         this.id = id;
         this.author = author;
         this.name = name;
@@ -18,20 +18,36 @@ class Book {
         return "" + id + ", " + author + ", " + name + ", " + year;
     }
 
-    int getId() {
+    public int getId() {
         return id;
     }
 
-    String getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    int getYear() {
+    public int getYear() {
         return year;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
 

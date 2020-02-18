@@ -21,13 +21,13 @@ public class Main {
 
             System.out.println("With synchronized.");
             Bank bankSynchronized = new BankSynchronized(AMOUNT_OF_ACCOUNTS);
-            bankSynchronized.executeTransfersFromFile(FILE_NAME);
+            bankSynchronized.executeTransfersFromFile(FILE_NAME, System.out);
             printBankStatistics(bankSynchronized);
             System.out.println();
 
             System.out.println("With concurrent");
             Bank bankConcurrent = new BankConcurrent(AMOUNT_OF_ACCOUNTS);
-            bankConcurrent.executeTransfersFromFile(FILE_NAME);
+            bankConcurrent.executeTransfersFromFile(FILE_NAME, System.out);
             printBankStatistics(bankConcurrent);
 
         } catch (FileNotFoundException e) {
